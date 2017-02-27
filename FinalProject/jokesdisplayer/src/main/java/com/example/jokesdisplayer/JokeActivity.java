@@ -3,6 +3,7 @@ package com.example.jokesdisplayer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -13,7 +14,11 @@ public class JokeActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.joke);
+
         Intent i = getIntent();
-        Toast.makeText(this, i.getExtras().get("joke").toString(), Toast.LENGTH_LONG).show();
+        TextView jokeView = (TextView) findViewById(R.id.joke_text_view);
+        jokeView.setText(i.getExtras().get("joke").toString());
     }
 }
