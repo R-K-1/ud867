@@ -1,15 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
-import com.example.JokesTeller;
-import com.example.jokesdisplayer.JokesDisplayer;
-import com.example.rkalonji.myapplication.jokestellerbackend.myApi.MyApi;
-import com.google.api.client.extensions.android.http.AndroidHttp;
-import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
-import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
-
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.util.Pair;
@@ -17,7 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+
+import com.example.jokesdisplayer.JokesDisplayer;
+import com.example.rkalonji.myapplication.jokestellerbackend.myApi.MyApi;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
+import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
 import java.io.IOException;
 
@@ -92,9 +89,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             JokesDisplayer jokesDisplayer = new JokesDisplayer();
-            Intent i = new Intent(getApplicationContext(), jokesDisplayer.getClass());
-            i.putExtra("joke", result);
-            startActivity(i);
+            jokesDisplayer.launchJokeActivity(getApplicationContext(), result);
         }
     }
 }
