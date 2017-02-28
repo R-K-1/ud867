@@ -21,9 +21,7 @@ public class GetJokeAndroidTest {
     public void verifyAsyncTaskReturnJoke() {
         EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
 
-        Context context = InstrumentationRegistry.getTargetContext();
-
-/*        endpointsAsyncTask.execute(new Pair<Context, String>(context, "Manfred"));
+        endpointsAsyncTask.execute(new android.support.v4.util.Pair<Context, String>(InstrumentationRegistry.getTargetContext(), "Manfred"));
         do {
             try {
                 Thread.sleep(100);
@@ -32,6 +30,6 @@ public class GetJokeAndroidTest {
             }
         } while (endpointsAsyncTask.getHasExecuted() == false);
 
-        assertFalse(endpointsAsyncTask.getJoke() == "");*/
+        assertFalse(endpointsAsyncTask.getJoke() == "");
     }
 }
