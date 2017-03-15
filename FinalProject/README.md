@@ -11,4 +11,4 @@ but building them simultaneously.
 No special steps are required; download the project, open it in Android Studio, follow the IDE
 prompts and you will soon be up and running.
 
-The app has a free flavor with an Ad Banner and a paid flavor without any add.
+The app has a free flavor with an Ad Banner and a paid flavor without any Ads.
